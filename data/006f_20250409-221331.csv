@@ -1,0 +1,375 @@
+"1. 006f -- Helsingin, Espoon ja Vantaan asuntokuntien tulot elinvaiheen mukaan osa-alueittain 1995-"
+
+"Alue";"Elinvaihe";"2022 Valtionveronalaisten tulojen keskiarvo, euroa";"2022 Valtionveronalaisten tulojen mediaani, euroa";"2022 K�ytett�viss� olevan rahatulon keskiarvo, euroa";"2022 K�ytett�viss� olevan rahatulon mediaani, euroa";"2022 Kulutusyksikk�kohtainen k�ytett�viss� olevan rahatulon keskiarvo, euroa";"2022 Kulutusyksikk�kohtainen k�ytett�viss� olevan rahatulon mediaani, euroa"
+"091 Helsinki";"Asuntokunnat yhteens�";67135;45396;51876;36757;36367;29023
+"091 1 Eteläinen suurpiiri";"Asuntokunnat yhteens�";95462;55712;71167;43064;50346;34436
+"091 101 Vironniemen peruspiiri";"Asuntokunnat yhteens�";106024;62950;79305;48588;56033;36653
+"091 10 Kruununhaka";"Asuntokunnat yhteens�";97291;62056;72520;48184;50809;36622
+"091 20 Kluuvi";"Asuntokunnat yhteens�";126959;74178;98544;59131;73854;43364
+"091 80 Katajanokka";"Asuntokunnat yhteens�";116236;62995;86807;48389;61375;36059
+"091 102 Ullanlinnan peruspiiri";"Asuntokunnat yhteens�";118012;55826;89071;43109;62058;35495
+"091 30 Kaartinkaupunki";"Asuntokunnat yhteens�";178371;80614;131243;58782;93847;45100
+"091 50 Punavuori";"Asuntokunnat yhteens�";81746;48031;61247;37669;44785;32711
+"091 60 Eira";"Asuntokunnat yhteens�";193242;82017;147836;62678;95927;45328
+"091 70 Ullanlinna";"Asuntokunnat yhteens�";134710;58546;100943;45245;67906;36567
+"091 90 Kaivopuisto";"Asuntokunnat yhteens�";312807;135880;260498;108081;185854;71959
+"091 204 Hernesaari";"Asuntokunnat yhteens�";119853;53964;93462;42763;72927;35780
+"091 520 Suomenlinna";"Asuntokunnat yhteens�";70849;61970;55509;49823;34231;31831
+"091 103 Kampinmalmin peruspiiri";"Asuntokunnat yhteens�";84934;52474;63789;41482;45661;32982
+"091 40 Kamppi";"Asuntokunnat yhteens�";94727;49867;70740;39130;52821;32591
+"091 130 Etu-T��l�";"Asuntokunnat yhteens�";93580;59349;68960;45622;48667;36306
+"091 201 Ruoholahti";"Asuntokunnat yhteens�";62967;49936;50232;41849;34221;29466
+"091 202 Lapinlahti";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"091 203 J�tk�saari";"Asuntokunnat yhteens�";70403;50381;54121;40562;37674;31200
+"091 104 Taka-T��l�n peruspiiri";"Asuntokunnat yhteens�";82095;50303;60558;38675;43793;32948
+"091 140 Taka-T��l�";"Asuntokunnat yhteens�";82095;50303;60558;38675;43793;32948
+"091 105 Lauttasaaren peruspiiri";"Asuntokunnat yhteens�";94549;62203;68761;46549;48056;36335
+"091 311 Kotkavuori";"Asuntokunnat yhteens�";72919;53269;54180;40800;38953;33554
+"091 312 Vattuniemi";"Asuntokunnat yhteens�";114869;73273;82123;54722;56309;40197
+"091 313 Myllykallio";"Asuntokunnat yhteens�";97242;60963;70964;45693;49535;35964
+"091 2 L�ntinen suurpiiri";"Asuntokunnat yhteens�";62507;44033;48309;35236;34273;28629
+"091 201 Reijolan peruspiiri";"Asuntokunnat yhteens�";61058;43930;46863;35037;34387;29289
+"091 150 Meilahti";"Asuntokunnat yhteens�";62388;42295;47090;33075;35341;29571
+"091 161 Vanha Ruskeasuo";"Asuntokunnat yhteens�";62082;44283;47106;35143;35185;29685
+"091 162 Pikku Huopalahti";"Asuntokunnat yhteens�";59111;45185;46592;37492;32771;28652
+"091 180 Laakso";"Asuntokunnat yhteens�";61640;44379;46708;34309;35342;30178
+"091 202 Munkkiniemen peruspiiri";"Asuntokunnat yhteens�";95502;54086;70955;41366;48280;33298
+"091 301 Vanha Munkkiniemi";"Asuntokunnat yhteens�";108971;60168;79795;46263;54015;35698
+"091 302 Kuusisaari";"Asuntokunnat yhteens�";344502;181122;260831;139057;148735;81640
+"091 303 Lehtisaari";"Asuntokunnat yhteens�";151967;81237;113782;62036;72985;41710
+"091 304 Munkkivuori";"Asuntokunnat yhteens�";62544;46172;46950;35340;34452;30177
+"091 305 Niemenm�ki";"Asuntokunnat yhteens�";62754;46367;47052;35140;34773;30951
+"091 306 Talinranta";"Asuntokunnat yhteens�";51354;39745;42516;33254;29169;26092
+"091 203 Haagan peruspiiri";"Asuntokunnat yhteens�";53717;40491;41650;32299;31081;27764
+"091 291 Etel�-Haaga";"Asuntokunnat yhteens�";58344;41611;44189;32324;32913;28945
+"091 292 Kivihaka";"Asuntokunnat yhteens�";56139;44391;43104;35014;33606;29944
+"091 293 Pohjois-Haaga";"Asuntokunnat yhteens�";48658;38653;38859;31702;28968;26554
+"091 294 Lassila";"Asuntokunnat yhteens�";50149;39649;39702;32494;29605;26867
+"091 204 Pit�j�nm�en peruspiiri";"Asuntokunnat yhteens�";57189;44418;45025;35746;31840;28414
+"091 320 Konala";"Asuntokunnat yhteens�";58611;46007;45948;36936;32118;28684
+"091 461 Pajam�ki";"Asuntokunnat yhteens�";50271;43340;39337;33834;29978;28655
+"091 462 Tali";"Asuntokunnat yhteens�";45375;34106;38623;30729;27119;22722
+"091 463 Reimarla";"Asuntokunnat yhteens�";57015;40947;45677;34020;30953;27041
+"091 464 Marttila";"Asuntokunnat yhteens�";94828;78774;69374;60534;42751;39691
+"091 465 Pit�j�nm�en yritysalue";"Asuntokunnat yhteens�";59175;48496;45735;37770;33844;30154
+"091 205 Kaarelan peruspiiri";"Asuntokunnat yhteens�";54179;42383;43283;35300;29844;26630
+"091 331 Kannelm�ki";"Asuntokunnat yhteens�";44409;35850;36839;30900;26988;24545
+"091 332 Maununneva";"Asuntokunnat yhteens�";104568;92263;76299;69468;44566;39489
+"091 333 Malminkartano";"Asuntokunnat yhteens�";47184;38667;39022;33656;27250;24901
+"091 334 Hakuninmaa";"Asuntokunnat yhteens�";88343;76688;65522;59493;40200;36338
+"091 335 Kuninkaantammi";"Asuntokunnat yhteens�";58169;48251;45580;38884;32160;29049
+"091 336 Honkasuo";"Asuntokunnat yhteens�";75819;67802;56176;50241;36483;34448
+"091 3 Keskinen suurpiiri";"Asuntokunnat yhteens�";55989;40958;43589;32975;32951;28364
+"091 301 Kallion peruspiiri";"Asuntokunnat yhteens�";59114;41137;45495;32772;35292;29044
+"091 101 Vilhonvuori";"Asuntokunnat yhteens�";54934;43579;42531;34345;33080;29687
+"091 102 Kalasatama";"Asuntokunnat yhteens�";85770;57675;63438;44320;45577;34371
+"091 103 Sompasaari";"Asuntokunnat yhteens�";79989;56887;59823;44162;41661;33058
+"091 111 Siltasaari";"Asuntokunnat yhteens�";72664;45540;54755;35713;40540;30813
+"091 112 Linjat";"Asuntokunnat yhteens�";49526;36722;38876;29989;31548;27286
+"091 113 Torkkelinm�ki";"Asuntokunnat yhteens�";44648;32690;35967;27217;30719;25757
+"091 302 Alppiharjun peruspiiri";"Asuntokunnat yhteens�";43205;33462;34552;27699;28996;26008
+"091 121 Harju";"Asuntokunnat yhteens�";42447;31952;34119;26926;28780;25443
+"091 122 Alppila";"Asuntokunnat yhteens�";44505;35686;35296;29233;29365;27036
+"091 303 Vallilan peruspiiri";"Asuntokunnat yhteens�";55106;40418;42677;32783;32024;28040
+"091 211 Hermanninm�ki";"Asuntokunnat yhteens�";56771;44280;44114;35323;32720;29494
+"091 213 Kyl�saari";"Asuntokunnat yhteens�";14362;11810;16994;15545;15329;15174
+"091 220 Vallila";"Asuntokunnat yhteens�";56387;40770;43282;32797;32541;28259
+"091 304 Pasilan peruspiiri";"Asuntokunnat yhteens�";57275;46289;44521;36999;32714;29439
+"091 171 L�nsi-Pasila";"Asuntokunnat yhteens�";58563;47283;45166;37352;32888;29746
+"091 172 Pohjois-Pasila";"Asuntokunnat yhteens�";54714;45768;43046;36179;31927;29308
+"091 173 It�-Pasila";"Asuntokunnat yhteens�";50740;40663;40725;34572;29866;27404
+"091 174 Keski-Pasila";"Asuntokunnat yhteens�";70663;56701;52621;43114;39379;33577
+"091 305 Vanhankaupungin peruspiiri";"Asuntokunnat yhteens�";58970;44058;46426;35897;32375;28434
+"091 231 Toukola";"Asuntokunnat yhteens�";57113;39938;44991;32808;32312;27465
+"091 232 Arabianranta";"Asuntokunnat yhteens�";69999;54547;53247;43693;36192;32020
+"091 240 Kumpula";"Asuntokunnat yhteens�";46432;35395;39120;30902;27308;24487
+"091 250 K�pyl�";"Asuntokunnat yhteens�";61242;46381;47619;36897;33740;29693
+"091 260 Koskela";"Asuntokunnat yhteens�";49293;36621;40501;31401;28542;25165
+"091 270 Vanhakaupunki";"Asuntokunnat yhteens�";56823;41920;45100;36301;30965;27477
+"091 4 Pohjoinen suurpiiri";"Asuntokunnat yhteens�";79683;59654;59495;46652;38357;32586
+"091 401 Maunulan peruspiiri";"Asuntokunnat yhteens�";52835;37925;42180;31406;29782;26173
+"091 281 Pirkkola";"Asuntokunnat yhteens�";89579;78815;66577;62086;40924;38550
+"091 282 Maunula";"Asuntokunnat yhteens�";45707;34531;37303;29314;27624;24855
+"091 283 Mets�l�";"Asuntokunnat yhteens�";101194;85230;75574;66426;44414;37472
+"091 402 L�nsi-Pakilan peruspiiri";"Asuntokunnat yhteens�";111774;94856;80656;70940;48539;41881
+"091 341 L�nsi-Pakila";"Asuntokunnat yhteens�";111774;94856;80656;70940;48539;41881
+"091 403 Tuomarinkyl�n peruspiiri";"Asuntokunnat yhteens�";110095;91705;79286;68446;46823;40360
+"091 351 Palohein�";"Asuntokunnat yhteens�";116179;98162;83211;73065;49200;42743
+"091 352 Torpparinm�ki";"Asuntokunnat yhteens�";97708;76490;71305;59724;41945;35092
+"091 354 Haltiala";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"091 404 Oulunkyl�n peruspiiri";"Asuntokunnat yhteens�";66988;48654;51052;38465;35173;29950
+"091 284 Patola";"Asuntokunnat yhteens�";63368;47553;48477;37674;33576;29628
+"091 285 Ver�j�m�ki";"Asuntokunnat yhteens�";87575;57964;64760;44812;43547;32682
+"091 287 Ver�j�laakso";"Asuntokunnat yhteens�";48660;43683;40333;36228;28853;27255
+"091 405 It�-Pakilan peruspiiri";"Asuntokunnat yhteens�";104390;90296;75430;67763;44697;39074
+"091 342 It�-Pakila";"Asuntokunnat yhteens�";104591;91613;75393;68260;45095;39645
+"091 353 Tuomarinkartano";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"091 5 Koillinen suurpiiri";"Asuntokunnat yhteens�";58102;45056;46122;37216;30963;27547
+"091 501 Latokartanon peruspiiri";"Asuntokunnat yhteens�";51956;40090;41819;33893;29099;26061
+"091 361 Viikinranta";"Asuntokunnat yhteens�";98773;74708;69677;56011;46721;39120
+"091 362 Latokartano";"Asuntokunnat yhteens�";56519;44748;44927;37246;30030;27472
+"091 363 Viikin tiedepuisto";"Asuntokunnat yhteens�";32016;22582;28541;23461;20884;18607
+"091 364 Viikinm�ki";"Asuntokunnat yhteens�";60763;47939;47484;38351;32731;28767
+"091 383 Pihlajam�ki";"Asuntokunnat yhteens�";42878;34922;36236;30064;26342;24265
+"091 386 Pihlajisto";"Asuntokunnat yhteens�";41692;33357;35135;29104;25803;23756
+"091 502 Pukinm�en peruspiiri";"Asuntokunnat yhteens�";47863;39137;39080;32895;28457;25756
+"091 370 Pukinm�ki";"Asuntokunnat yhteens�";47863;39137;39080;32895;28457;25756
+"091 503 Malmin peruspiiri";"Asuntokunnat yhteens�";60074;45934;47434;37618;31831;28210
+"091 381 Yl�-Malmi";"Asuntokunnat yhteens�";42602;33958;36227;30080;26576;23978
+"091 382 Ala-Malmi";"Asuntokunnat yhteens�";50094;37433;41631;33092;28263;25071
+"091 384 Tattariharju";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"091 385 Malmin lentokentt�";"Asuntokunnat yhteens�";63918;51169;49690;41172;32197;29194
+"091 391 Tapaninvainio";"Asuntokunnat yhteens�";84594;70347;62889;55420;39951;34934
+"091 392 Tapanila";"Asuntokunnat yhteens�";60996;47070;47749;37717;32129;29092
+"091 504 Suutarilan peruspiiri";"Asuntokunnat yhteens�";65742;53673;51085;43546;32752;29382
+"091 401 Siltam�ki";"Asuntokunnat yhteens�";60247;48855;47327;40221;30947;28205
+"091 403 T�yrynummi";"Asuntokunnat yhteens�";80048;66909;60870;53147;37451;32969
+"091 505 Puistolan peruspiiri";"Asuntokunnat yhteens�";70465;56558;54435;45338;34544;30417
+"091 402 Tapulikaupunki";"Asuntokunnat yhteens�";55980;43081;45241;37070;30146;26578
+"091 411 Puistola";"Asuntokunnat yhteens�";89932;74350;66482;58147;40536;34775
+"091 412 Heikinlaakso";"Asuntokunnat yhteens�";85092;75435;64667;58390;38435;34412
+"091 413 Tattarisuo";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"091 415 Alppikyl�";"Asuntokunnat yhteens�";59638;50054;47312;39986;31703;29473
+"091 506 Jakom�en peruspiiri";"Asuntokunnat yhteens�";39055;30718;34781;29007;24255;22185
+"091 414 Jakom�ki";"Asuntokunnat yhteens�";39055;30718;34781;29007;24255;22185
+"091 6 Kaakkoinen suurpiiri";"Asuntokunnat yhteens�";69103;46872;53298;37840;36329;29335
+"091 601 Kulosaaren peruspiiri";"Asuntokunnat yhteens�";129217;69125;96392;52785;60534;38077
+"091 190 Mustikkamaa-Korkeasaari";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"091 420 Kulosaari";"Asuntokunnat yhteens�";129450;69133;96558;52782;60635;38081
+"091 602 Herttoniemen peruspiiri";"Asuntokunnat yhteens�";60574;42818;47385;35093;33420;28112
+"091 431 L�nsi-Herttoniemi";"Asuntokunnat yhteens�";55190;38317;43489;31299;31095;26913
+"091 432 Roihuvuori";"Asuntokunnat yhteens�";47668;38527;38997;32247;28464;25725
+"091 433 Herttoniemen yritysalue";"Asuntokunnat yhteens�";53380;42937;41927;36074;31177;28236
+"091 434 Herttoniemenranta";"Asuntokunnat yhteens�";61455;47412;47662;38808;33939;29649
+"091 440 Tammisalo";"Asuntokunnat yhteens�";158822;103310;115971;78075;71116;44347
+"091 603 Laajasalon peruspiiri";"Asuntokunnat yhteens�";71538;51180;54749;40672;36537;30241
+"091 480 Vartiosaari";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"091 491 Yliskyl�";"Asuntokunnat yhteens�";61779;45747;47994;37009;33353;28626
+"091 492 Jollas";"Asuntokunnat yhteens�";126558;94887;93851;71723;54656;40742
+"091 493 Tullisaari";"Asuntokunnat yhteens�";62353;46455;47382;37894;33776;29724
+"091 494 Kruunuvuorenranta";"Asuntokunnat yhteens�";69143;53750;53047;41504;35814;30437
+"091 495 Hevossalmi";"Asuntokunnat yhteens�";92297;67185;69216;52461;42699;33544
+"091 510 Santahamina";"Asuntokunnat yhteens�";69615;64794;50285;46533;35471;34822
+"091 532 It�saaret";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"091 7 It�inen suurpiiri";"Asuntokunnat yhteens�";51706;38692;42435;33504;29246;25549
+"091 701 Vartiokyl�n peruspiiri";"Asuntokunnat yhteens�";61919;42058;49144;35624;32887;27286
+"091 451 Vartioharju";"Asuntokunnat yhteens�";83375;67898;62820;52949;39013;33714
+"091 452 Puotila";"Asuntokunnat yhteens�";45121;36661;37340;30866;28179;26246
+"091 453 Puotinharju";"Asuntokunnat yhteens�";42416;32023;36211;29250;26268;23311
+"091 455 Marjaniemi";"Asuntokunnat yhteens�";152897;115715;111193;87195;65239;48294
+"091 456 Roihupelto";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"091 457 It�keskus";"Asuntokunnat yhteens�";45050;31149;38834;29744;26824;22422
+"091 702 Myllypuron peruspiiri";"Asuntokunnat yhteens�";54226;41745;43683;35465;29551;26474
+"091 454 Myllypuro";"Asuntokunnat yhteens�";54226;41745;43683;35465;29551;26474
+"091 703 Mellunkyl�n peruspiiri";"Asuntokunnat yhteens�";44547;34545;38104;31048;26454;23663
+"091 471 Kontula";"Asuntokunnat yhteens�";40853;30903;36192;29237;25171;22367
+"091 472 Vesala";"Asuntokunnat yhteens�";50414;39626;42060;34669;27995;25185
+"091 473 Mellunm�ki";"Asuntokunnat yhteens�";45738;36170;37933;30599;27598;24930
+"091 474 Kivikko";"Asuntokunnat yhteens�";44849;35446;38788;32468;25823;23061
+"091 475 Kurkim�ki";"Asuntokunnat yhteens�";44806;35884;37996;31911;26343;24105
+"091 704 Vuosaaren peruspiiri";"Asuntokunnat yhteens�";52502;40616;42715;34730;29960;26455
+"091 541 Keski-Vuosaari";"Asuntokunnat yhteens�";49074;38974;39867;32622;28480;25997
+"091 542 Nordsj�n kartano";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"091 543 Uutela";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"091 544 Meri-Rastila";"Asuntokunnat yhteens�";48966;36590;41335;33420;27810;24040
+"091 545 Kallahti";"Asuntokunnat yhteens�";41643;33342;37381;31862;26357;23328
+"091 546 Aurinkolahti";"Asuntokunnat yhteens�";64994;51227;50069;40293;35760;31065
+"091 547 Rastila";"Asuntokunnat yhteens�";58859;44775;46964;37272;31084;27644
+"091 8 �stersundomin suurpiiri";"Asuntokunnat yhteens�";158932;107176;120879;82225;68738;44989
+"091 801 �stersundomin peruspiiri";"Asuntokunnat yhteens�";158932;107176;120879;82225;68738;44989
+"091 550 �stersundom";"Asuntokunnat yhteens�";113259;68361;84936;55584;49242;34618
+"091 560 Salmenkallio";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"091 570 Talosaari";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"091 580 Karhusaari";"Asuntokunnat yhteens�";257993;163490;199651;119939;102930;65904
+"091 591 Landbo";"Asuntokunnat yhteens�";139635;119266;102610;89347;57433;47235
+"091 592 Puroniitty";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"049 Espoo";"Asuntokunnat yhteens�";79923;56981;59479;44697;38293;31650
+"049 1 Suur-Lepp�vaara";"Asuntokunnat yhteens�";73529;54761;55007;42958;35904;31037
+"049 11 Kanta-Lepp�vaara";"Asuntokunnat yhteens�";67455;51125;50942;40139;34637;30361
+"049 111 Pohjois-Lepp�vaara";"Asuntokunnat yhteens�";55630;44947;42987;35983;31787;28936
+"049 112 Etel�-Lepp�vaara";"Asuntokunnat yhteens�";63224;48676;48419;38767;33780;29308
+"049 113 M�kkyl�";"Asuntokunnat yhteens�";69061;53021;51251;40514;36602;32313
+"049 114 Lintukorpi";"Asuntokunnat yhteens�";85834;66216;64136;52972;38238;32810
+"049 115 Lintulaakso";"Asuntokunnat yhteens�";135920;120409;95416;85281;52269;44693
+"049 116 Uusm�ki";"Asuntokunnat yhteens�";105133;83804;73831;61952;44361;38533
+"049 117 Lintumets�";"Asuntokunnat yhteens�";101489;87185;73545;65795;41868;37432
+"049 118 Perkkaa";"Asuntokunnat yhteens�";50617;41453;40467;34376;29727;26802
+"049 13 Kilo-Karakallio";"Asuntokunnat yhteens�";64165;47808;49744;39545;32522;28219
+"049 131 Nuijala";"Asuntokunnat yhteens�";69437;52436;53080;42494;34328;29771
+"049 132 Kuninkainen";"Asuntokunnat yhteens�";70609;51645;53890;41814;33877;28875
+"049 133 Karakallio";"Asuntokunnat yhteens�";54356;42038;43496;35400;29679;26586
+"049 14 Laaksolahti";"Asuntokunnat yhteens�";114781;92040;81260;68360;47058;39197
+"049 141 Veininlaakso";"Asuntokunnat yhteens�";116690;95899;81562;70240;47647;40075
+"049 142 L�hderanta";"Asuntokunnat yhteens�";59688;45810;46270;36778;32480;28133
+"049 143 Jupperi";"Asuntokunnat yhteens�";138930;111093;97323;80703;53381;43914
+"049 15 Viherlaakso-Lippaj�rvi";"Asuntokunnat yhteens�";73198;56525;54659;43508;35549;31307
+"049 151 Viherlaakso";"Asuntokunnat yhteens�";66983;51929;50307;40699;33968;30180
+"049 152 Lippaj�rvi";"Asuntokunnat yhteens�";82057;64435;60863;49769;37803;32977
+"049 16 Sep�nkyl�";"Asuntokunnat yhteens�";81754;56492;59080;43408;38827;32515
+"049 161 Sep�nkyl�";"Asuntokunnat yhteens�";81754;56492;59080;43408;38827;32515
+"049 2 Suur-Tapiola";"Asuntokunnat yhteens�";95722;63385;69557;48580;45151;35315
+"049 21 Kanta-Tapiola";"Asuntokunnat yhteens�";83126;58416;60428;44067;41666;34345
+"049 211 Tapiolan keskus";"Asuntokunnat yhteens�";87516;61051;63786;45908;46566;36606
+"049 212 L�nsikorkee";"Asuntokunnat yhteens�";75136;51013;55556;39023;39916;32268
+"049 213 Otsolahti";"Asuntokunnat yhteens�";80089;60013;57972;44544;39957;35145
+"049 214 Niittykumpu";"Asuntokunnat yhteens�";69805;50060;51758;38885;36790;31344
+"049 215 Pohjois-Tapiola";"Asuntokunnat yhteens�";109806;82593;77251;61051;47665;39987
+"049 22 Otaniemi";"Asuntokunnat yhteens�";25076;14242;25576;18704;17814;15244
+"049 222 Otaniemi";"Asuntokunnat yhteens�";25076;14242;25576;18704;17814;15244
+"049 23 Haukilahti-Westend";"Asuntokunnat yhteens�";153126;92075;110555;68018;68989;44535
+"049 231 Westend";"Asuntokunnat yhteens�";222389;124836;162776;91443;99292;54113
+"049 232 Haukilahti";"Asuntokunnat yhteens�";119951;77614;85543;58091;54475;40092
+"049 24 Mankkaa";"Asuntokunnat yhteens�";125888;105139;87336;75598;50543;44376
+"049 241 Vanha-Mankkaa";"Asuntokunnat yhteens�";126803;105428;87983;75598;51264;45040
+"049 242 Taavinkyl�";"Asuntokunnat yhteens�";124687;103575;86488;75616;49596;43695
+"049 25 Laajalahti";"Asuntokunnat yhteens�";115613;88707;83055;67284;47302;39180
+"049 251 Ruukinranta";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"049 252 Pohjois-Laajalahti";"Asuntokunnat yhteens�";110389;87249;79177;66079;45578;38747
+"049 3 Suur-Matinkyl�";"Asuntokunnat yhteens�";73923;51768;55259;40542;37061;30638
+"049 31 Matinkyl�";"Asuntokunnat yhteens�";73704;48875;55531;38809;37423;29699
+"049 311 Matinmets�";"Asuntokunnat yhteens�";56749;42539;44195;34803;31635;27401
+"049 312 Tiistil�";"Asuntokunnat yhteens�";61521;43445;47753;35931;32505;27421
+"049 313 Matinlahti";"Asuntokunnat yhteens�";86835;57866;63703;44347;42017;32711
+"049 314 Matinkyl�n keskus";"Asuntokunnat yhteens�";56479;45452;43718;36445;33055;29184
+"049 315 Nuottaniemi";"Asuntokunnat yhteens�";248155;161590;175555;112858;93919;61748
+"049 316 Miessaari";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"049 32 Olari";"Asuntokunnat yhteens�";80279;61329;58616;47181;38832;33610
+"049 321 Friisil�";"Asuntokunnat yhteens�";98893;69211;71046;53060;44052;35164
+"049 322 Olarinm�ki";"Asuntokunnat yhteens�";92986;77315;66674;58262;42382;37544
+"049 323 Kuitinm�ki";"Asuntokunnat yhteens�";61493;48250;46456;38140;33575;29731
+"049 33 Henttaa-Suurpelto";"Asuntokunnat yhteens�";60299;43229;46802;35207;31892;27472
+"049 331 Henttaa";"Asuntokunnat yhteens�";103240;63061;74836;49104;45927;35463
+"049 332 Suurpelto";"Asuntokunnat yhteens�";51781;40461;41241;33839;29108;26360
+"049 4 Suur-Espoonlahti";"Asuntokunnat yhteens�";83308;58911;61951;46663;39234;31762
+"049 41 Kanta-Espoonlahti";"Asuntokunnat yhteens�";68021;48120;52192;39139;35206;28823
+"049 411 Espoonlahden keskus";"Asuntokunnat yhteens�";50830;38585;40652;32765;29300;25827
+"049 412 Soukanm�ki";"Asuntokunnat yhteens�";62960;47337;48563;38900;33085;28345
+"049 413 Kivenlahti";"Asuntokunnat yhteens�";53246;41994;42493;35039;30545;27017
+"049 414 Laurinlahti";"Asuntokunnat yhteens�";98326;82328;70856;61610;43141;37390
+"049 415 Soukanniemi";"Asuntokunnat yhteens�";194018;114379;140845;82289;84062;49325
+"049 42 Saunalahti";"Asuntokunnat yhteens�";87004;56032;63951;44532;39881;31659
+"049 421 Kattilalaakso";"Asuntokunnat yhteens�";140199;105251;99304;78094;55781;41543
+"049 422 Tillinm�ki";"Asuntokunnat yhteens�";131833;103645;91743;76112;49932;40658
+"049 423 Saunaniemi";"Asuntokunnat yhteens�";64809;42479;49687;34011;34061;27705
+"049 43 N�ykki�-Latokaski";"Asuntokunnat yhteens�";103564;82902;74386;62958;43398;36891
+"049 431 Latokaskenm�ki";"Asuntokunnat yhteens�";94802;83333;68659;63145;40369;35829
+"049 432 Eestinmalmi";"Asuntokunnat yhteens�";99758;78994;72919;60524;42877;37030
+"049 433 Malminm�ki";"Asuntokunnat yhteens�";100337;82494;72386;62566;43503;37076
+"049 434 N�ykki�nlaakso";"Asuntokunnat yhteens�";116046;85872;81763;65142;46499;38286
+"049 44 Kaitaa";"Asuntokunnat yhteens�";88367;65617;65065;51428;41234;33203
+"049 441 Iivisniemi";"Asuntokunnat yhteens�";79918;54636;59897;44929;39098;30499
+"049 442 Hannus";"Asuntokunnat yhteens�";76553;60596;57555;47377;37091;31271
+"049 443 Hannusj�rvi";"Asuntokunnat yhteens�";119216;98506;84121;72065;49809;42576
+"049 45 Suvisaaristo";"Asuntokunnat yhteens�";237161;110027;181113;89111;107738;48787
+"049 451 Suvisaari";"Asuntokunnat yhteens�";239455;111344;182809;89581;108630;48967
+"049 452 Ulkosaaret";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"049 5 Suur-Kauklahti";"Asuntokunnat yhteens�";85144;65937;63057;52282;37610;32302
+"049 51 Kanta-Kauklahti";"Asuntokunnat yhteens�";72363;53358;55125;43386;34119;28940
+"049 511 Kauklahti";"Asuntokunnat yhteens�";69434;51794;52824;41995;32902;28565
+"049 512 Espoonkartano";"Asuntokunnat yhteens�";107842;73951;82992;57840;48863;35908
+"049 52 Kurttila-Vanttila";"Asuntokunnat yhteens�";102315;86078;73713;64662;42300;37213
+"049 521 Kurttila";"Asuntokunnat yhteens�";102977;87592;74483;66721;42901;37994
+"049 522 Vanttila";"Asuntokunnat yhteens�";101210;80983;72429;61130;41296;35953
+"049 6 Vanha-Espoo";"Asuntokunnat yhteens�";68583;51499;52656;41835;33441;29000
+"049 61 Kanta-Espoo";"Asuntokunnat yhteens�";62121;44979;48414;37602;31329;26992
+"049 611 Kirkkoj�rvi";"Asuntokunnat yhteens�";49095;41452;39560;33816;28363;25951
+"049 612 Tuomarila";"Asuntokunnat yhteens�";83336;70078;60816;53947;38912;34832
+"049 613 Suvela";"Asuntokunnat yhteens�";47097;36468;39612;32534;26452;23635
+"049 614 Kuurinniitty";"Asuntokunnat yhteens�";124964;106568;86298;76784;47933;41851
+"049 615 Kaupunginkallio";"Asuntokunnat yhteens�";103765;91583;74422;69845;43404;39653
+"049 616 Ymmersta";"Asuntokunnat yhteens�";81160;47960;60315;39456;37456;29598
+"049 62 Muurala-Gumb�le";"Asuntokunnat yhteens�";75583;64995;57150;51319;34916;32048
+"049 621 Muurala";"Asuntokunnat yhteens�";73133;61872;55666;49874;34287;31388
+"049 622 Gumb�le";"Asuntokunnat yhteens�";82125;70481;61110;54331;36597;33863
+"049 63 Bemb�le";"Asuntokunnat yhteens�";80180;64500;59949;50610;37399;32466
+"049 631 Karvasm�ki";"Asuntokunnat yhteens�";73866;64123;55301;50566;34726;32322
+"049 632 J�rvenper�";"Asuntokunnat yhteens�";75422;59130;56283;45673;36469;31595
+"049 633 H�gn�s";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"049 634 Karhusuo";"Asuntokunnat yhteens�";87545;73983;65807;56641;38709;33944
+"049 635 Kunnarla";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"049 64 Nuuksio-Nupuri";"Asuntokunnat yhteens�";95457;78475;71855;59938;43143;35647
+"049 642 Vanha-Nuuksio-Nupuri";"Asuntokunnat yhteens�";99694;82906;74568;63138;44600;36646
+"049 643 Siikaj�rvi";"Asuntokunnat yhteens�";85903;73525;65401;55987;38963;34329
+"049 644 Nuuksionp��";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"049 7 Pohjois-Espoo";"Asuntokunnat yhteens�";92745;80009;68953;61839;39946;35231
+"049 71 Vanhakartano-R�yl�";"Asuntokunnat yhteens�";95739;81956;70750;62757;40788;35384
+"049 711 R�yl�";"Asuntokunnat yhteens�";98864;81824;75126;64798;39511;34664
+"049 712 Puotinen";"Asuntokunnat yhteens�";187563;107443;145215;81874;85131;43704
+"049 713 Vanhakartano";"Asuntokunnat yhteens�";84163;68847;62377;52523;37975;33456
+"049 714 Perusm�ki";"Asuntokunnat yhteens�";103734;93912;74694;69870;42514;38847
+"049 715 Niipperi";"Asuntokunnat yhteens�";87626;74493;65341;58616;37383;33525
+"049 72 Kalaj�rvi-Lakisto";"Asuntokunnat yhteens�";87146;77202;65593;60468;38373;34888
+"049 721 Kalaj�rvi";"Asuntokunnat yhteens�";85644;75162;64689;59150;38034;33375
+"049 722 Luukki";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"049 723 Lahnus";"Asuntokunnat yhteens�";102789;100987;75764;74992;41853;38864
+"049 724 Lakisto";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"049 725 Velskola";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"092 Vantaa";"Asuntokunnat yhteens�";58831;46606;46005;37518;30977;28035
+"092 1 Myyrm�en suuralue";"Asuntokunnat yhteens�";55602;44312;43640;35772;30356;27696
+"092 10 Linnainen";"Asuntokunnat yhteens�";112428;102209;81870;75836;48021;40457
+"092 11 H�mevaara";"Asuntokunnat yhteens�";85171;70961;62736;55748;38464;34711
+"092 12 H�meenkyl�";"Asuntokunnat yhteens�";56490;47589;43970;37442;30984;28827
+"092 13 Vapaala";"Asuntokunnat yhteens�";72497;56613;54391;43676;34886;30441
+"092 14 Varisto";"Asuntokunnat yhteens�";67029;58761;51808;45364;33308;30508
+"092 15 Myyrm�ki";"Asuntokunnat yhteens�";46098;37729;37638;31444;27616;25597
+"092 16 Kaivoksela";"Asuntokunnat yhteens�";50632;41862;39666;32928;29643;27852
+"092 17 Martinlaakso";"Asuntokunnat yhteens�";50522;41167;40549;33792;28512;26242
+"092 18 Vantaanlaakso";"Asuntokunnat yhteens�";84592;75201;61712;56775;38903;35273
+"092 20 Askisto";"Asuntokunnat yhteens�";84477;75403;63131;57966;37558;33619
+"092 26 Petikko";"Asuntokunnat yhteens�";95117;84138;71289;62715;42288;36915
+"092 2 Kivist�n suuralue";"Asuntokunnat yhteens�";61567;46279;47792;36411;32024;28571
+"092 21 Piispankyl�";"Asuntokunnat yhteens�";56501;45608;44709;35992;33329;28745
+"092 22 Keimola";"Asuntokunnat yhteens�";43389;36375;35990;30300;27035;25527
+"092 23 Kivist�";"Asuntokunnat yhteens�";58839;42006;45485;33277;31111;27803
+"092 24 Lapinkyl�";"Asuntokunnat yhteens�";94327;88657;70838;66552;39196;37041
+"092 25 Myllym�ki";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"092 30 Vestra";"Asuntokunnat yhteens�";101494;82343;76156;64444;45810;33950
+"092 31 Luhtaanm�ki";"Asuntokunnat yhteens�";104056;79245;77061;63905;50292;35735
+"092 32 Riipil�";"Asuntokunnat yhteens�";78698;66731;60800;54114;36487;32566
+"092 33 Seutula";"Asuntokunnat yhteens�";77353;63070;60064;50350;35633;32748
+"092 34 Kiila";"Asuntokunnat yhteens�";69622;62469;55190;47222;34282;31488
+"092 3 Aviapoliksen suuralue";"Asuntokunnat yhteens�";71922;57551;53745;44750;34529;31403
+"092 40 Yl�st�";"Asuntokunnat yhteens�";110099;97173;78164;71292;43568;38469
+"092 41 Viinikkala";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"092 50 Tammisto";"Asuntokunnat yhteens�";70643;58415;52640;45205;35092;31862
+"092 51 Pakkala";"Asuntokunnat yhteens�";65649;53452;49782;41939;32970;30511
+"092 52 Veromies";"Asuntokunnat yhteens�";39711;34696;33319;29104;26039;24717
+"092 53 Lentokentt�";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"092 4 Tikkurilan suuralue";"Asuntokunnat yhteens�";56926;45273;44482;36207;31203;28189
+"092 60 Hiekkaharju";"Asuntokunnat yhteens�";61675;48425;46995;37760;32775;29905
+"092 61 Tikkurila";"Asuntokunnat yhteens�";46420;37565;37465;30630;29200;25941
+"092 62 Jokiniemi";"Asuntokunnat yhteens�";44754;35697;36657;30132;26779;24355
+"092 63 Viertola";"Asuntokunnat yhteens�";60447;49179;45975;38333;32863;30005
+"092 64 Kuninkaala";"Asuntokunnat yhteens�";76781;68835;59616;54467;36744;33449
+"092 65 Simonkyl�";"Asuntokunnat yhteens�";52992;42254;42452;34858;29301;26491
+"092 66 Hakkila";"Asuntokunnat yhteens�";64155;55948;49038;44079;32379;30166
+"092 67 Ruskeasanta";"Asuntokunnat yhteens�";82566;74024;61286;56320;37886;34640
+"092 68 Koivuhaka";"Asuntokunnat yhteens�";62536;48374;48392;38487;32548;29341
+"092 69 Helsingin pit�j�n kk.";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"092 5 Koivukyl�n suuralue";"Asuntokunnat yhteens�";56825;44407;45114;36399;29757;26785
+"092 70 Koivukyl�";"Asuntokunnat yhteens�";52545;41887;41576;33694;29585;26993
+"092 71 Ilola";"Asuntokunnat yhteens�";84063;74262;62917;57461;36988;32965
+"092 72 Asola";"Asuntokunnat yhteens�";45470;36028;37641;30802;27008;24693
+"092 73 Rekola";"Asuntokunnat yhteens�";83748;75828;63251;59648;37488;33780
+"092 74 Havukoski";"Asuntokunnat yhteens�";38633;31628;33524;27928;23877;22148
+"092 75 P�iv�kumpu";"Asuntokunnat yhteens�";86352;75357;64707;58436;37788;33724
+"092 6 Korson suuralue";"Asuntokunnat yhteens�";64044;53629;49713;42482;31747;28957
+"092 80 Matari";"Asuntokunnat yhteens�";82240;75466;61701;59080;36733;34535
+"092 81 Korso";"Asuntokunnat yhteens�";54497;44457;43241;35576;29439;26978
+"092 82 Mikkola";"Asuntokunnat yhteens�";39761;33096;34334;29288;24960;22945
+"092 83 Metsola";"Asuntokunnat yhteens�";54578;43566;43508;35496;29206;26419
+"092 84 Lepp�korpi";"Asuntokunnat yhteens�";78268;70913;58176;55032;35823;33142
+"092 85 Jokivarsi";"Asuntokunnat yhteens�";100738;92749;74343;69822;41369;38228
+"092 86 Nikinm�ki";"Asuntokunnat yhteens�";95719;86665;70405;65892;39682;36238
+"092 87 Vierum�ki";"Asuntokunnat yhteens�";77707;70842;58544;54813;35608;32990
+"092 88 Vallinoja";"Asuntokunnat yhteens�";65513;54849;51562;44404;32125;28257
+"092 7 Hakunilan suuralue";"Asuntokunnat yhteens�";55967;45066;44977;37464;29482;26710
+"092 90 L�nsisalmi";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"092 91 L�nsim�ki";"Asuntokunnat yhteens�";41961;33277;36282;29934;25034;23206
+"092 92 Ojanko";"Asuntokunnat yhteens�";..;..;..;..;..;..
+"092 93 Vaarala";"Asuntokunnat yhteens�";69832;63166;52637;49309;33942;31735
+"092 94 Hakunila";"Asuntokunnat yhteens�";42440;34527;36622;30865;25327;23093
+"092 95 Rajakyl�";"Asuntokunnat yhteens�";74037;68390;55430;53011;35226;33405
+"092 96 It�-Hakkila";"Asuntokunnat yhteens�";85628;76678;63931;58381;38995;34865
+"092 97 Kuninkaanm�ki";"Asuntokunnat yhteens�";87363;74608;65865;57666;37695;34034
+"092 98 Sotunki";"Asuntokunnat yhteens�";104981;89061;78836;69648;46626;38020
