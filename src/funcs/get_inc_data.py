@@ -1,7 +1,7 @@
 import requests
 import pandas as pd
 from io import StringIO
-
+import numpy as np
 # URL for the table
 url = "https://stat.hel.fi:443/api/v1/fi/Aluesarjat/tul/astul/alu_astul_006f.px"
 
@@ -37,7 +37,16 @@ def make_query(years):
     if response.status_code == 200:
         #print(response.text)
         df = pd.read_csv(StringIO(response.text), sep=",")
-        #print(df.head(), "\n")
+        
+        placeholder = [df.columns[i].split(' ')[0] for i in range(len(df.columns))]
+        
+        
+        df.columns = placeholder
+        df.replace('..',np.nan,inplace=True)
+        df.dropna(inplace=True)
+
+        df[years] = df[years].astype(int)
+        print(df.head(), "\n")
     else:
         print(f"Error: {response.status_code}")
         print(response.text)
