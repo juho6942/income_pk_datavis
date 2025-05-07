@@ -268,7 +268,7 @@ def create_map(_, slider):
             locations="AlueNimi", # Tells Plotly which column in income_df has the region names
             featureidkey="properties.nimi", # Tells Plotly where to find the matching region name within the GeoJSON's properties
             color=str(disp_year), # This column's values will determine the color
-            color_continuous_scale="Viridis", # Uses the "Viridis" continuous color scale (low values are purple/blue, high values are yellow)
+            color_continuous_scale="speed", # Uses the "Viridis" continuous color scale (low values are purple/blue, high values are yellow)
             range_color=(10000, 200000), 
             # --- End of key coloring part ---
             mapbox_style="carto-positron",
