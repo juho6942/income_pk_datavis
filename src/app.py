@@ -3,6 +3,7 @@ from dash import dcc, html, Input, Output, Patch, State
 import pandas as pd
 import geopandas as gpd
 import plotly.express as px
+import plotly.graph_objects as go
 import json
 import requests
 from shapely.geometry import shape
@@ -138,7 +139,7 @@ def prepare_data():
         return None
     
     # Prepare a dataframe with just the regions and their income values
-    print(income_data.columns)
+    #print(income_data.columns)
     income_cols = list(map(str,AVAILABLE_YEARS))
     income_cols.append('AlueNimi')
     return income_data[income_cols].copy()
@@ -154,43 +155,171 @@ income_df = prepare_data()
 app = dash.Dash(__name__, title="Helsinki Region Income Map")
 server = app.server  # For deployment
 
+# Create and cache the initial map with animation frames
+def create_animated_map():
+    """Create a map with animation frames for all years"""
+    
+    if geojson_path is None or income_df is None:
+        return px.scatter(title="Error loading data")
+    
+    # Load GeoJSON from file to ensure it's available
+    try:
+        with open(geojson_path, 'r') as f:
+            geojson_data = json.load(f)
+    except Exception as e:
+        print(f"Error loading GeoJSON: {str(e)}")
+        return px.scatter(title=f"Error loading GeoJSON: {str(e)}")
+    
+    # Create a base figure
+    fig = go.Figure()
+    
+    # Create frames for each year
+    frames = []
+    
+    # Add a choropleth trace for each year
+    base_trace = go.Choroplethmapbox(
+        geojson=geojson_data,
+        locations=income_df['AlueNimi'],
+        z=income_df[str(MAX_YEAR)],
+        featureidkey="properties.nimi",
+        colorscale="speed",
+        zmin=10000,
+        zmax=200000,
+        marker_opacity=0.7,
+        marker_line_width=0,
+        colorbar=dict(
+            title="Median household income",
+            thickness=15,
+            len=0.9,
+            y=0.5,
+            yanchor="middle",
+            outlinewidth=0
+        ),
+        hovertemplate='<b>%{location}</b><br>Income %{z:,.0f} €<extra></extra>',
+    )
+
+    # Create the figure with the base trace
+    fig = go.Figure(data=[base_trace])
+
+    # Create animation frames with only updated 'z' values
+    frames = []
+    for year in AVAILABLE_YEARS:
+        frames.append(go.Frame(
+            data=[go.Choroplethmapbox(
+                z=income_df[str(year)],
+                locations=income_df['AlueNimi']
+            )],
+            name=str(year),
+            layout=dict(title_text=f"Helsinki Region Income Map - {year}")
+        ))
+    fig.frames = frames
+
+    # Define slider steps
+    sliders = [{
+        'active': len(AVAILABLE_YEARS) - 1,
+        'yanchor': 'top',
+        'xanchor': 'left',
+        'currentvalue': {
+            'font': {'size': 16},
+            'prefix': 'Year: ',
+            'visible': True,
+            'xanchor': 'right'
+        },
+        'transition': {'duration': 0},
+        'pad': {'b': 10, 't': 50},
+        'len': 0.9,
+        'x': 0.1,
+        'y': 0,
+        'steps': [
+            {
+                'args': [
+                    [str(year)],
+                    {
+                        'frame': {'duration': 0, 'redraw': True},
+                        'mode': 'immediate',
+                        'transition': {'duration': 0}
+                    }
+                ],
+                'label': str(year),
+                'method': 'animate'
+            }
+            for year in AVAILABLE_YEARS
+        ]
+    }]
+
+    # Define play/pause buttons
+    updatemenus = [{
+        'buttons': [
+            {
+                'args': [
+                    None,
+                    {
+                        'frame': {'duration': 1000, 'redraw': True},
+                        'fromcurrent': True,
+                        'transition': {'duration': 0}
+                    }
+                ],
+                'label': 'Play',
+                'method': 'animate'
+            },
+            {
+                'args': [
+                    [None],
+                    {
+                        'frame': {'duration': 0, 'redraw': True},
+                        'mode': 'immediate',
+                        'transition': {'duration': 0}
+                    }
+                ],
+                'label': 'Pause',
+                'method': 'animate'
+            }
+        ],
+        'direction': 'left',
+        'pad': {'r': 10, 't': 87},
+        'showactive': False,
+        'type': 'buttons',
+        'x': 0.1,
+        'xanchor': 'right',
+        'y': 0,
+        'yanchor': 'top'
+    }]
+
+    # Final layout update
+    fig.update_layout(
+        title_text=f"Helsinki Region Income Map - {MAX_YEAR}",
+        title_x=0.5,
+        mapbox=dict(
+            style="carto-positron",
+            center={"lat": 60.255541, "lon": 24.782289},
+            zoom=9.7
+        ),
+        height=700,
+        margin={"r": 0, "t": 50, "l": 0, "b": 0},
+        updatemenus=updatemenus,
+        sliders=sliders
+    )
+
+    return fig
+
 # App Layout
 app.layout = html.Div([
-    html.H1("Helsinki Region Income Map",style={'textAlign': 'center'}),
-    html.P("Displays Median household income of taxpayers by region for Helsinki, Espoo, and Vantaa.",style={'textAlign': 'center'}),
+    html.H1("Helsinki Region Income Map", style={'textAlign': 'center'}),
+    html.P("Displays Median household income of taxpayers by region for Helsinki, Espoo, and Vantaa.", style={'textAlign': 'center'}),
     
-    html.Div([
-        html.Button('Play', id='play-button',n_clicks=0),
-        dcc.Slider(MIN_YEAR,MAX_YEAR,1,value=MAX_YEAR,id='year-selector',marks={i:str(i) for i in AVAILABLE_YEARS}),
-        dcc.Interval(
-            id='interval-component',
-            interval=1200,  # Change to 1000ms (1 second)
-            n_intervals=0,
-            disabled=True  # Start as disabled
-        )
-    ],style={'textAlign': 'center'}),
     # Loading indicator
     dcc.Loading(
         id="loading-map",
         type="default",
         children=[
-            # The map
+            # The map with animation controls
             dcc.Graph(
                 id='income-map',
                 style={'height': '700px'},
-                config={'scrollZoom': True},
-                # Initialize the figure with a blank basemap to avoid loading delays
-                figure={
-                    'data': [],
-                    'layout': {
-                        'mapbox': {
-                            'style': "carto-positron",
-                            'center': {'lon': 24.9384, 'lat': 60.1699},  # Helsinki coordinates
-                            'zoom': 9
-                        },
-                        'margin': {"r":0,"t":0,"l":0,"b":0},
-                        'height': 700
-                    }
+                config={
+                    'scrollZoom': True,
+                    'displayModeBar': True,
+                    'modeBarButtonsToRemove': ['lasso2d', 'select2d']
                 }
             )
         ]
@@ -207,96 +336,21 @@ app.layout = html.Div([
     ], style={'marginTop': '20px'})
 ])
 
-PLAY_INTERVAL_MS = 1000  # Change from 800ms to 1000ms (1 second)
-
-# In the toggle_interval callback, change 'Pause' to 'Stop'
-@app.callback(
-    [Output('interval-component', 'disabled'),
-     Output('play-button', 'children'),
-     Output('year-selector', 'value')], 
-    [Input('play-button', 'n_clicks')],
-    [State('interval-component', 'disabled'),
-     State('year-selector', 'value')] 
-)
-def toggle_interval(n_clicks, is_disabled, current_year):
-    if n_clicks == 0:
-        # Initial load, keep interval disabled
-        return True, 'Play', dash.no_update
-
-    if is_disabled:
-        # If disabled, enable it and change button to 'Stop'
-        # If slider is already at max, reset to min before playing
-        new_year = MIN_YEAR if current_year == MAX_YEAR else dash.no_update
-        return False, 'Stop', new_year  # Changed 'Pause' to 'Stop'
-    else:
-        # If enabled, disable it and change button to 'Play'
-        return True, 'Play', dash.no_update
-
-# Also in the update_slider_value callback, change 'Play' to 'Play'
-@app.callback(
-    [Output('year-selector', 'value', allow_duplicate=True),
-     Output('interval-component', 'disabled', allow_duplicate=True),
-     Output('play-button', 'children', allow_duplicate=True)],
-    [Input('interval-component', 'n_intervals')],
-    [State('year-selector', 'value')],
-    prevent_initial_call=True
-)
-def update_slider_value(n_intervals, current_year):
-    if current_year < MAX_YEAR:
-        next_year = current_year + 1
-        return next_year, dash.no_update, dash.no_update
-    else:
-        # Reached the end, stop the interval and reset button
-        return MAX_YEAR, True, 'Play' 
-# Callback for initial map creation (server-side)
+# Callback to initialize the map
 @app.callback(
     Output('income-map', 'figure'),
-    Input('income-map', 'id'),  # Dummy input to trigger on load
-    Input('year-selector','value')
+    Input('income-map', 'id')  # Dummy input to trigger on load
 )
-def create_map(_, slider):
-    if geojson_path is None or income_df is None:
-        return px.scatter(title="Error loading data")
-    disp_year = slider 
-    # Use the path to the static asset file instead of loading the entire GeoJSON
-    geojson_asset_path = "/" + geojson_path  # Important: use the web path, not the system path
-    
-    try:
-        fig = px.choropleth_mapbox(
-            income_df,  # Your DataFrame with region names and income values
-            geojson=geojson_asset_path, # Your GeoJSON file with region shapes
-            locations="AlueNimi", # Tells Plotly which column in income_df has the region names
-            featureidkey="properties.nimi", # Tells Plotly where to find the matching region name within the GeoJSON's properties
-            color=str(disp_year), # This column's values will determine the color
-            color_continuous_scale="speed", # Uses the "Viridis" continuous color scale (low values are purple/blue, high values are yellow)
-            range_color=(10000, 200000), 
-            # --- End of key coloring part ---
-            mapbox_style="carto-positron",
-            zoom=9.7,
-            center={"lat": 60.255541, "lon": 24.782289},
-            opacity=0.7,
-            labels={"2022"} # Makes the legend label clearer
-        )
-        
-        # Optimize layout for performance
-        fig.update_layout(
-            margin={"r":0,"t":0,"l":0,"b":0},
-            autosize=True,
-            height=700,
-        )
-        
-        return fig
-    except Exception as e:
-        print(f"Error creating map: {str(e)}")
-        return px.scatter(title=f"Error creating map: {str(e)}")
+def init_map(_):
+    return create_animated_map()
 
-# Callback for showing data table - simplified
+# Callback for showing data table - unchanged
 @app.callback(
     Output('data-table-container', 'children'),
     Input('show-data-button', 'n_clicks')
 )
 def update_data_table(n_clicks):
-    if n_clicks %2 == 0:
+    if n_clicks % 2 == 0:
         return html.Div()
     
     if income_df is None:
@@ -305,7 +359,7 @@ def update_data_table(n_clicks):
     return html.Div([
         html.H4("Data Preview (First 20 Rows)"),
         dash.dash_table.DataTable(
-            data=income_df.sort_values(by=['2022'],ascending=False).head(20).to_dict('records'),
+            data=income_df.sort_values(by=['2022'], ascending=False).head(20).to_dict('records'),
             columns=[{'name': col, 'id': col} for col in income_df.columns],
             style_table={'overflowX': 'auto'},
             style_cell={
@@ -317,13 +371,13 @@ def update_data_table(n_clicks):
         )
     ])
 
-# Callback for showing memory usage
+# Callback for showing memory usage - unchanged
 @app.callback(
     Output('memory-usage-container', 'children'),
     Input('show-memory-button', 'n_clicks')
 )
 def update_memory_usage(n_clicks):
-    if n_clicks %2 == 0:
+    if n_clicks % 2 == 0:
         return html.Div()
     
     if income_df is None:
@@ -340,5 +394,6 @@ def update_memory_usage(n_clicks):
     ])
 
 # Run the app
-if __name__ == "__main__":
-    app.run_server(debug=True)
+server = app.server
+if __name__ == '__main__':
+    app.run_server(debug=True, port=8051) 

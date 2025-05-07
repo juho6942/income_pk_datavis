@@ -46,7 +46,7 @@ def make_query(years):
         df.dropna(how='all',inplace=True)
 
         df[years] = df[years].astype(float)
-        print(df.head(), "\n")
+        #print(df.head(), "\n")
     else:
         print(f"Error: {response.status_code}")
         print(response.text)
