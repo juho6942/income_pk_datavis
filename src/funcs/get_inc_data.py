@@ -21,7 +21,7 @@ def make_query(years):
             "selection": {
                 "filter": "item",
                 "values": [
-                "Mean_svatv"
+                "Median_svatv"
                 ]
             }
             }
@@ -43,9 +43,9 @@ def make_query(years):
         
         df.columns = placeholder
         df.replace('..',np.nan,inplace=True)
-        df.dropna(inplace=True)
+        df.dropna(how='all',inplace=True)
 
-        df[years] = df[years].astype(int)
+        df[years] = df[years].astype(float)
         print(df.head(), "\n")
     else:
         print(f"Error: {response.status_code}")
