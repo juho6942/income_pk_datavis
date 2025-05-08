@@ -1,7 +1,0 @@
-[server]
-# Disable Streamlit's default CSP header.
-# WARNING: This reduces security protections. Use with caution.
-enableCsp = false
-
-# You might also need this if you encounter XSRF issues, but less likely for 'unsafe-eval'.
-# enableXsrfProtection = false

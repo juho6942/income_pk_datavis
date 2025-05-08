@@ -12,7 +12,7 @@ from functools import lru_cache
 import os
 from funcs.get_inc_data import make_query
 from funcs.clean_data import clean_data
-
+import dash_bootstrap_components as dbc
 
 # --- Configuration ---
 WFS_BASE_URL = "https://kartta.hel.fi/ws/geoserver/avoindata/wfs"
@@ -301,7 +301,14 @@ def create_animated_map():
     )
 
     return fig
-
+areanames = income_df['AlueNimi'].unique().tolist()
+data = income_df.copy()
+data_pivoted = data.transpose()
+data_pivoted.columns = data_pivoted.iloc[-1]
+data_pivoted.drop(data_pivoted.index[-1], inplace=True)
+data_pivoted.reset_index(inplace=True)
+data_pivoted.rename(columns={'index': 'Year'}, inplace=True)
+print(data_pivoted.head())
 # App Layout
 app.layout = html.Div([
     html.H1("Helsinki Region Income Map", style={'textAlign': 'center'}),
@@ -324,15 +331,20 @@ app.layout = html.Div([
             )
         ]
     ),
-    
+    dbc.Row([
+        dbc.Col([dcc.Dropdown(areanames,multi=True, id='area-input', value='Jollas')], width=4)], style={'marginTop': '40px'})
+    ,
+    html.Div([
+        dcc.Graph(
+            id='income-line-chart',
+            style={'height': '400px'}
+        )
+    ], style={'marginTop': '40px'}),
     # Data explorer section
     html.Div([
         html.H3("Data Explorer"),
         html.Button('Show Data Table', id='show-data-button', n_clicks=0),
         html.Div(id='data-table-container'),
-        
-        html.Button('Show Memory Usage', id='show-memory-button', n_clicks=0),
-        html.Div(id='memory-usage-container'),
     ], style={'marginTop': '20px'})
 ])
 
@@ -344,23 +356,83 @@ app.layout = html.Div([
 def init_map(_):
     return create_animated_map()
 
+
+@app.callback(
+    Output('income-line-chart', 'figure'),
+    Input('area-input', 'value'),
+)
+def update_line_chart(area_names_selected):
+    
+    
+    
+    fig = go.Figure()
+    if not isinstance(area_names_selected, list):
+        area_names_selected = [area_names_selected]
+    
+    # Add trace for each selected area
+    for area in area_names_selected:
+        if area in data_pivoted.columns:
+            fig.add_trace(go.Scatter(
+                x=AVAILABLE_YEARS,
+                y=data_pivoted[area],
+                mode='lines+markers',
+                name=area
+            ))
+    
+    # Set chart title
+    title = f"Income Trends for {', '.join(area_names_selected)}"
+    
+    # Update layout
+    fig.update_layout(
+        title=title,
+        xaxis_title='Year',
+        yaxis_title='Median household income',
+        hovermode='x unified',
+        xaxis=dict(
+            tickmode='array',
+            tickvals=AVAILABLE_YEARS,
+            ticktext=AVAILABLE_YEARS,
+        ),
+        yaxis=dict(
+            tickprefix='€',
+            tickformat=',.0f'
+        )
+    )
+
+    return fig
+    
 # Callback for showing data table - unchanged
 @app.callback(
     Output('data-table-container', 'children'),
-    Input('show-data-button', 'n_clicks')
+    Input('show-data-button', 'n_clicks'),
+    Input('area-input', 'value'),
 )
-def update_data_table(n_clicks):
+def update_data_table(n_clicks, areas):
     if n_clicks % 2 == 0:
         return html.Div()
     
     if income_df is None:
         return html.Div("No data available")
     
+    # Properly handle areas whether it's a string or a list
+    if areas is None:
+        return html.Div("No areas selected")
+    
+    area_names_selected = [areas] if isinstance(areas, str) else areas
+    
+    # Ensure we have a DataFrame with the selected columns
+    area_names_selected.append('Year')
+    try:
+        selected_areas = data_pivoted[area_names_selected]
+        
+    except Exception as e:
+        return html.Div(f"Error selecting data: {str(e)}")
+    
     return html.Div([
-        html.H4("Data Preview (First 20 Rows)"),
+        html.H4("Data View"),
         dash.dash_table.DataTable(
-            data=income_df.sort_values(by=['2022'], ascending=False).head(20).to_dict('records'),
-            columns=[{'name': col, 'id': col} for col in income_df.columns],
+            data=selected_areas.head(20).to_dict('records'),  # 'records' is the correct format
+            columns=[{'name': col, 'id': col} for col in selected_areas.columns[::-1]],
             style_table={'overflowX': 'auto'},
             style_cell={
                 'textAlign': 'left',
@@ -371,29 +443,5 @@ def update_data_table(n_clicks):
         )
     ])
 
-# Callback for showing memory usage - unchanged
-@app.callback(
-    Output('memory-usage-container', 'children'),
-    Input('show-memory-button', 'n_clicks')
-)
-def update_memory_usage(n_clicks):
-    if n_clicks % 2 == 0:
-        return html.Div()
-    
-    if income_df is None:
-        return html.Div("No data available")
-    
-    # Calculate file size of the optimized GeoJSON
-    file_size_mb = os.path.getsize(geojson_path) / (1024*1024) if geojson_path else 0
-    memory_usage_mb = income_df.memory_usage(deep=True).sum() / (1024*1024)
-    
-    return html.Div([
-        html.H4("Data & Memory Usage"),
-        html.P(f"Optimized GeoJSON file size: {file_size_mb:.2f} MB"),
-        html.P(f"Income DataFrame memory usage: {memory_usage_mb:.2f} MB")
-    ])
-
-# Run the app
-server = app.server
 if __name__ == '__main__':
     app.run_server(debug=True, port=8051) 
