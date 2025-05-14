@@ -13,7 +13,7 @@ import os
 from funcs.get_inc_data import make_query
 from funcs.clean_data import clean_data
 import dash_bootstrap_components as dbc
-
+import scipy.stats as sps
 # --- Configuration ---
 WFS_BASE_URL = "https://kartta.hel.fi/ws/geoserver/avoindata/wfs"
 LAYER_NAME = "avoindata:Seutukartta_aluejako_pienalue"
@@ -152,7 +152,53 @@ geojson_path = download_and_optimize_geojson()
 income_df = prepare_data()
 
 # Initialize the Dash app
-app = dash.Dash(__name__, title="Helsinki Region Income Map")
+app = dash.Dash(
+    __name__, 
+    title="Helsinki Region Income Map",
+    external_stylesheets=[
+        dbc.themes.FLATLY,  # A clean, modern theme
+        "https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;700&display=swap"
+    ]
+)
+app.index_string = '''
+<!DOCTYPE html>
+<html>
+    <head>
+        {%metas%}
+        <title>{%title%}</title>
+        {%favicon%}
+        {%css%}
+        <style>
+            body {
+                font-family: 'Lato', sans-serif;
+                background-color: #f8f9fa;
+                color: #343a40;
+            }
+            h1, h2, h3, h4 {
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 700;
+            }
+            .card {
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+            }
+            .navbar-brand {
+                font-weight: 700;
+                font-size: 1.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+            {%renderer%}
+        </footer>
+    </body>
+</html>
+'''
 server = app.server  # For deployment
 
 # Create and cache the initial map with animation frames
@@ -210,7 +256,7 @@ def create_animated_map():
                 locations=income_df['AlueNimi']
             )],
             name=str(year),
-            layout=dict(title_text=f"Helsinki Region Income Map - {year}")
+            layout=dict(title_text=f"{year}")
         ))
     fig.frames = frames
 
@@ -310,43 +356,114 @@ data_pivoted.reset_index(inplace=True)
 data_pivoted.rename(columns={'index': 'Year'}, inplace=True)
 print(data_pivoted.head())
 # App Layout
-app.layout = html.Div([
-    html.H1("Helsinki Region Income Map", style={'textAlign': 'center'}),
-    html.P("Displays Median household income of taxpayers by region for Helsinki, Espoo, and Vantaa.", style={'textAlign': 'center'}),
-    
-    # Loading indicator
-    dcc.Loading(
-        id="loading-map",
-        type="default",
-        children=[
-            # The map with animation controls
-            dcc.Graph(
-                id='income-map',
-                style={'height': '700px'},
-                config={
-                    'scrollZoom': True,
-                    'displayModeBar': True,
-                    'modeBarButtonsToRemove': ['lasso2d', 'select2d']
-                }
-            )
-        ]
+app.layout = dbc.Container([
+    html.Br(),
+    html.Div(
+        html.H2(
+            "Capital City Region Income Explorer",
+            className="py-3 text-center text-white font-weight-bold",
+            style={
+                "backgroundColor": "#1B4D3E",
+                "fontFamily": "'Montserrat', sans-serif",
+                "margin": "0",
+                "boxShadow": "0 2px 4px rgba(0,0,0,0.2)",
+                "letterSpacing": "0.5px",
+                "borderRadius": "12px",  # Added curved edges
+                "padding": "10px 15px"
+            }
+        ),
+        className="mb-4"
     ),
+    
     dbc.Row([
-        dbc.Col([dcc.Dropdown(areanames,multi=True, id='area-input', value='Jollas')], width=4)], style={'marginTop': '40px'})
-    ,
-    html.Div([
-        dcc.Graph(
-            id='income-line-chart',
-            style={'height': '400px'}
-        )
-    ], style={'marginTop': '40px'}),
+        dbc.Col([
+            dbc.Card([
+                dbc.CardBody([
+                    html.P(
+                        "Explore median household income patterns across Helsinki, Espoo, and Vantaa from 2005-2023.",
+                        className="card-text text-center text-muted mb-4"
+                    ),
+                    # Loading indicator
+                    dcc.Loading(
+                        id="loading-map",
+                        type="circle",
+                        children=[
+                            # The map with animation controls
+                            dcc.Graph(
+                                id='income-map',
+                                style={'height': '800px'},
+                                config={
+                                    'scrollZoom': True,
+                                    'displayModeBar': True,
+                                    'modeBarButtonsToRemove': ['lasso2d', 'select2d']
+                                }
+                            )
+                        ]
+                    ),
+                ])
+            ], className="mb-4"),
+        ], width=12)
+    ]),
+    
+    dbc.Row([
+        dbc.Col([
+            dbc.Card([
+                dbc.CardBody([
+                    html.H4("Area Comparison", className="card-title"),
+                    html.P("Select areas to compare income trends over time:", className="text-muted"),
+                    dbc.Row([
+                        dbc.Col([
+                            dcc.Dropdown(
+                                id='area-input',
+                                options=[{'label': area, 'value': area} for area in areanames],
+                                multi=True,
+                                value=['Jollas'],
+                                placeholder="Select areas to compare...",
+                                className="mb-3"
+                            )
+                        ], width=12)
+                    ]),
+                    dcc.Graph(
+                        id='income-line-chart',
+                        style={'height': '400px'}
+                    )
+                ])
+            ], className="mb-4"),
+        ], width=12)
+    ]),
+    
     # Data explorer section
-    html.Div([
-        html.H3("Data Explorer"),
-        html.Button('Show Data Table', id='show-data-button', n_clicks=0),
-        html.Div(id='data-table-container'),
-    ], style={'marginTop': '20px'})
-])
+    dbc.Row([
+        dbc.Col([
+            dbc.Card([
+                dbc.CardBody([
+                    html.H4("Data Explorer", className="card-title"),
+                    html.P("View the trends and statistics of selected areas:", className="text-muted mb-3"),
+                    dbc.Button(
+                        "Toggle Data Table",
+                        id='show-data-button',
+                        color="secondary",
+                        className="mb-3",
+                        n_clicks=0,
+                    ),
+                    html.Div(id='data-table-container')
+                ])
+            ])
+        ], width=12)
+    ]),
+    
+    # Footer
+    dbc.Row([
+        dbc.Col([
+            html.Hr(),
+            html.P(
+                "Helsinki Region Income Map Dashboard • Created with Dash",
+                className="text-center text-muted"
+            ),
+        ], width=12)
+    ], className="mt-4 mb-4")
+    
+], fluid=True, className="px-4")
 
 # Callback to initialize the map
 @app.callback(
@@ -400,8 +517,7 @@ def update_line_chart(area_names_selected):
     )
 
     return fig
-    
-# Callback for showing data table - unchanged
+
 @app.callback(
     Output('data-table-container', 'children'),
     Input('show-data-button', 'n_clicks'),
@@ -410,38 +526,88 @@ def update_line_chart(area_names_selected):
 def update_data_table(n_clicks, areas):
     if n_clicks % 2 == 0:
         return html.Div()
-    
-    if income_df is None:
+
+    if income_df is None or areas is None:
         return html.Div("No data available")
-    
-    # Properly handle areas whether it's a string or a list
-    if areas is None:
-        return html.Div("No areas selected")
-    
+
+    # Ensure list format
     area_names_selected = [areas] if isinstance(areas, str) else areas
-    
-    # Ensure we have a DataFrame with the selected columns
-    area_names_selected.append('Year')
+
     try:
-        selected_areas = data_pivoted[area_names_selected]
-        
+        selected_data = data_pivoted[['Year'] + area_names_selected]
     except Exception as e:
         return html.Div(f"Error selecting data: {str(e)}")
+
+    # Compute summary statistics per area
+    summary_rows = []
+    n_years = MAX_YEAR - MIN_YEAR
+
+    for area in area_names_selected:
+        series = selected_data[area]
+        series = series.dropna()
+        start_val = series.iloc[0]
+        end_val = series.iloc[-1]
+
+        if start_val > 0 and end_val > 0:
+            cagr = ((end_val / start_val) ** (1 / n_years) - 1) * 100
+        else:
+            cagr = None
+
+        trend = end_val - start_val
+        best_year = selected_data.loc[series.idxmax(), 'Year']
+        worst_year = selected_data.loc[series.idxmin(), 'Year']
+
+        summary_rows.append({
+            'Area': area,
+            'CAGR (%)': f"{cagr:.2f}" if cagr is not None else "N/A",
+            'Overall Growth (€)': f"{trend:,.0f}",
+            'Best Year': best_year,
+            'Worst Year': worst_year
+        })
+    renamed_data = selected_data.copy()
     
+    renamed_data.columns = [
+        'Year' if col == 'Year' else f"{col} Median household taxpayer income (€)"
+        for col in renamed_data.columns
+    ]
+    for col in renamed_data.columns:
+        if col != 'Year':
+            renamed_data[col] = renamed_data[col].apply(
+                lambda x: f"{x:,.0f}" if pd.notnull(x) else ""
+            )
+
     return html.Div([
-        html.H4("Data View"),
+        html.Br(),
+        html.H4("Summary Statistics"),
         dash.dash_table.DataTable(
-            data=selected_areas.head(20).to_dict('records'),  # 'records' is the correct format
-            columns=[{'name': col, 'id': col} for col in selected_areas.columns[::-1]],
+            data=summary_rows,
+            columns=[
+                {'name': 'Area', 'id': 'Area'},
+                {'name': 'CAGR (%)', 'id': 'CAGR (%)'},
+                {'name': 'Overall Growth (€)', 'id': 'Overall Growth (€)'},
+                {'name': 'Best Year', 'id': 'Best Year'},
+                {'name': 'Worst Year', 'id': 'Worst Year'}
+            ],
             style_table={'overflowX': 'auto'},
             style_cell={
-                'textAlign': 'left',
+                'textAlign': 'center',
                 'minWidth': '100px', 'width': '150px', 'maxWidth': '300px',
                 'overflow': 'hidden',
                 'textOverflow': 'ellipsis',
             }
+        ),
+        html.Br(),
+        html.H4("Selected Area Raw Data"),
+        dash.dash_table.DataTable(
+            id='raw-data-table',
+            data=renamed_data.to_dict('records'),
+            columns=[{'name': col, 'id': col} for col in renamed_data.columns],
+            style_table={'overflowX': 'auto'},
+            style_cell={'textAlign': 'left', 'padding': '5px'},
+            style_header={
+                'backgroundColor': 'rgb(230, 230, 230)'
+            }
         )
     ])
-
 if __name__ == '__main__':
     app.run_server(debug=True, port=8051) 
